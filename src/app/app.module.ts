@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { RouterModule } from '@angular/router'
+import { HttpClientModule } from '@angular/common/http'
 
-import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes'
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -14,7 +15,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { ProductService } from './services/product.service';
-
+import { UsersComponent } from './users/users.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,16 @@ import { ProductService } from './services/product.service';
     FooterComponent,
     ProductListComponent,
     ProductDetailComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES,{})
+
+
+    RouterModule.forRoot(ROUTES, {})
   ],
-  providers: [ProductService],
+  providers: [ProductService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

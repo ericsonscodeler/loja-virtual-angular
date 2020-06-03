@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'fai-footer',
+  selector: 'tsi-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
@@ -9,7 +9,7 @@ export class FooterComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
